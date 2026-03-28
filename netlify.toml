@@ -1,0 +1,20 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Fuerza siempre HTTPS
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Evita que el sitio sea embebido en iframes de otros sitios (clickjacking)
+    X-Frame-Options = "DENY"
+
+    # Evita que el navegador adivine el tipo de archivo (ataques MIME sniffing)
+    X-Content-Type-Options = "nosniff"
+
+    # Controla qué información se envía al hacer clic en enlaces externos
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Desactiva funciones del navegador que no necesita el sitio
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Política de contenido: solo carga recursos del propio sitio y WhatsApp
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; frame-src 'none'; connect-src 'self' https://wa.me; form-action 'self' https://wa.me;"
