@@ -17,4 +17,4 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
 
     # Política de contenido: solo carga recursos del propio sitio y WhatsApp
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; frame-src 'none'; connect-src 'self' https://wa.me; form-action 'self' https://wa.me;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://wa.me; form-action 'self' https://wa.me;"
