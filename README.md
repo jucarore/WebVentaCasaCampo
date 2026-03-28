@@ -4,6 +4,14 @@ Sitio web de venta para una casa de campo sostenible ubicada en la Vereda La Uni
 
 🌐 **Sitio en vivo:** [casacampoalcala.co](https://casacampoalcala.co)
 
+### 🌍 Disponible en 3 idiomas
+
+| Idioma | URL |
+|--------|-----|
+| Español | [casacampoalcala.co](https://casacampoalcala.co) |
+| English | [casacampoalcala.co/en/](https://casacampoalcala.co/en/) |
+| Français | [casacampoalcala.co/fr/](https://casacampoalcala.co/fr/) |
+
 ---
 
 ## 📸 Vista previa
@@ -39,7 +47,8 @@ Este es un sitio web estático de una sola página (SPA), optimizado para rendim
 |------------|------------|
 | **Estructura** | HTML5 semántico |
 | **Estilos** | CSS3 inline (custom properties, grid, flexbox) |
-| **JavaScript** | Vanilla JS (slider hero, galería lightbox, formulario WhatsApp) |
+| **JavaScript** | Vanilla JS (slider hero, galería lightbox, formulario WhatsApp, toggle galería móvil) |
+| **i18n** | Multilenguaje (ES, EN, FR) con archivos separados + meta hreflang |
 | **Hosting** | [Netlify](https://www.netlify.com/) |
 | **Dominio** | casacampoalcala.co |
 | **Seguridad** | Headers configurados en `netlify.toml` (HSTS, CSP, X-Frame-Options) |
@@ -52,7 +61,11 @@ Este es un sitio web estático de una sola página (SPA), optimizado para rendim
 
 ```
 WebVentaCasaCampo/
-├── index.html                          # Página principal (HTML + CSS + JS)
+├── index.html                          # Página principal en español
+├── en/
+│   └── index.html                      # English version
+├── fr/
+│   └── index.html                      # Version française
 ├── netlify.toml                        # Configuración de Netlify (headers de seguridad)
 ├── Estrategia-Redes-Sociales.md        # Plan de marketing en redes sociales
 ├── Imagenes/
