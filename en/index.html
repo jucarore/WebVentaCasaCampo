@@ -72,12 +72,18 @@
       position: relative; z-index: 2; text-align: center; color: var(--blanco);
       padding: 0 1.5rem;
     }
+    .hero-tag-wrap { text-align: center; margin-bottom: 1.2rem; }
     .hero-tag {
       display: inline-block;
-      background: var(--verde-claro); color: #fff;
-      font-family: 'Arial', sans-serif; font-size: 0.78rem;
-      letter-spacing: 2px; text-transform: uppercase;
-      padding: 0.4rem 1.2rem; border-radius: 20px; margin-bottom: 1.2rem;
+      background: #e74c3c; color: #fff;
+      font-family: 'Arial', sans-serif; font-size: 0.9rem;
+      letter-spacing: 3px; text-transform: uppercase; font-weight: 700;
+      padding: 0.5rem 1.8rem; border-radius: 20px;
+    }
+    .hero-location {
+      display: block; margin-top: 0.5rem;
+      font-family: 'Arial', sans-serif; font-size: 0.82rem;
+      color: rgba(255,255,255,0.85); letter-spacing: 1px;
     }
     .hero-title {
       font-size: clamp(2.4rem, 5vw, 4rem); font-weight: normal;
@@ -445,17 +451,44 @@
     footer strong { color: rgba(255,255,255,0.85); }
 
     /* ── WHATSAPP FLOAT ── */
-    .wa-float {
+    .wa-float-wrap {
       position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    }
+    .wa-float-btn {
       width: 58px; height: 58px; border-radius: 50%;
       background: #25d366; display: flex; align-items: center;
       justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.5);
-      text-decoration: none; font-size: 1.6rem;
+      cursor: pointer; border: none; font-size: 1.6rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .wa-float:hover {
+    .wa-float-btn:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 24px rgba(37,211,102,0.7);
+    }
+    .wa-float-menu {
+      display: none; position: absolute; bottom: 70px; right: 0;
+      background: #fff; border-radius: 12px; padding: 0.5rem;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.18); min-width: 240px;
+    }
+    .wa-float-menu.open { display: block; }
+    .wa-float-menu a {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.7rem 0.9rem; text-decoration: none;
+      border-radius: 8px; transition: background 0.15s;
+    }
+    .wa-float-menu a:hover { background: #f0faf4; }
+    .wa-float-menu .wa-name {
+      font-family: 'Arial', sans-serif; font-size: 0.88rem;
+      font-weight: 600; color: #333;
+    }
+    .wa-float-menu .wa-phone {
+      font-family: 'Arial', sans-serif; font-size: 0.75rem;
+      color: #888;
+    }
+    .wa-float-menu .wa-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #25d366; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
     }
 
     /* ── VIDEOS ── */
@@ -572,7 +605,10 @@
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-tag">✨ For Sale · Vereda La Unión · Alcalá, Valle</div>
+    <div class="hero-tag-wrap">
+      <div class="hero-tag">FOR SALE</div>
+      <span class="hero-location">Vereda La Unión · Alcalá, Valle del Cauca</span>
+    </div>
     <h1 class="hero-title">Sustainable Country House<br>in Colombia's Coffee Region</h1>
     <p class="hero-sub">Move-in ready or income-generating from day one</p>
     <div class="hero-price">
@@ -1048,6 +1084,27 @@
   </div>
 </section>
 
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float-wrap">
+  <div class="wa-float-menu" id="waMenu">
+    <a href="https://wa.me/573007390037?text=Hello%20Arturo%2C%20I%27m%20interested%20in%20the%20country%20house%20in%20Alcal%C3%A1%2C%20Valle.%20Can%20we%20schedule%20a%20visit%3F" target="_blank">
+      <div class="wa-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.859L0 24l6.322-1.506A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.875 9.875 0 01-5.023-1.37l-.36-.214-3.733.889.916-3.63-.234-.374A9.836 9.836 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/></svg></div>
+      <div><div class="wa-name">Arturo Cardona</div><div class="wa-phone">+57 300 7390037</div></div>
+    </a>
+    <a href="https://wa.me/573137717580?text=Hello%20Luz%20Stella%2C%20I%27m%20interested%20in%20the%20country%20house%20in%20Alcal%C3%A1%2C%20Valle.%20Can%20we%20schedule%20a%20visit%3F" target="_blank">
+      <div class="wa-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.859L0 24l6.322-1.506A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.875 9.875 0 01-5.023-1.37l-.36-.214-3.733.889.916-3.63-.234-.374A9.836 9.836 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/></svg></div>
+      <div><div class="wa-name">Luz Stella López</div><div class="wa-phone">+57 313 7717580</div></div>
+    </a>
+    <a href="https://wa.me/573154855410?text=Hello%20Liliana%2C%20I%27m%20interested%20in%20the%20country%20house%20in%20Alcal%C3%A1%2C%20Valle.%20Can%20we%20schedule%20a%20visit%3F" target="_blank">
+      <div class="wa-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.859L0 24l6.322-1.506A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.875 9.875 0 01-5.023-1.37l-.36-.214-3.733.889.916-3.63-.234-.374A9.836 9.836 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/></svg></div>
+      <div><div class="wa-name">Liliana Cerón</div><div class="wa-phone">+57 315 4855410</div></div>
+    </a>
+  </div>
+  <button class="wa-float-btn" onclick="document.getElementById('waMenu').classList.toggle('open')" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.859L0 24l6.322-1.506A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.875 9.875 0 01-5.023-1.37l-.36-.214-3.733.889.916-3.63-.234-.374A9.836 9.836 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/></svg>
+  </button>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <p><strong>🌿 Exclusive property — managed by specialized real estate advisors</strong></p>
@@ -1158,6 +1215,13 @@ function sendForm(e) {
   const texto = `Hello, I'm *${nombre}* (${telefono}).\n\nI'm interested in: ${interes}\n\n${mensaje}\n\n_Contact from the country house website in Alcalá._`;
   window.open(`https://wa.me/573154855410?text=${encodeURIComponent(texto)}`, '_blank');
 }
+
+// Close WhatsApp menu on outside click
+document.addEventListener('click', function(e) {
+  const wrap = document.querySelector('.wa-float-wrap');
+  const menu = document.getElementById('waMenu');
+  if (wrap && menu && !wrap.contains(e.target)) menu.classList.remove('open');
+});
 </script>
 </body>
 </html>
