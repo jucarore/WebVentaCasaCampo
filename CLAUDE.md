@@ -65,7 +65,7 @@ Imagenes/                      # Fotos y videos (compartidos)
 
 ## Contactos de la propiedad
 
-- Arturo Cardona: +57 300 7390037
+- FINKAS Y FINKAS: +57 311 2449977
 - Luz Stella López: +57 313 7717580
 - Liliana Cerón: +57 315 4855410
 - Email: casarodriguezarango@gmail.com
